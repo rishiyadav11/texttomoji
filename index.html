@@ -253,7 +253,7 @@ document.getElementById("share").addEventListener("click", function() {
     if (navigator.share) {
         navigator.share({
             title: 'secret msg',
-            text: 'keep it secret',
+            text: result.textContent,
             content:'emojiText' // URL to be shared
         })
         .then(() => console.log('Successfully shared'))
