@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT TO EMOJI</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="font-[gilroy] text-white  min-h-screen  w-full bg-black">
+    <div class="loader sm:left-[25%] sm:h-[50%] text-black rounded-md z-20 sm:w-[50%] bg-zinc-50 absolute p-5">
+        <i class="cross ri-close-line absolute top-2 left-[91%] text-2xl rounded-full border border-black px-1 cursor-pointer"></i>
+        <h1 class="text-center text-3xl font-semibold sm:text-5xl mt-5">Welcome to Text-Emoji Encryption!</h1>
+        <p class="mt-5 text-lg text-center">Encrypt text into emojis or decode emojis into text easily! <br class="hidden sm:block"> Express yourself creatively or ensure privacy with our simple tool.</p>
+        <h1 class="text-center mt-5 text-3xl font-medium">How it Works: </h1>
+        <h1 class="text-center text-2xl mt-5 font-extralight">
+           1 Text to Emoji: Input your text, watch it transform into emojis.
+            <br>
+          2 Emoji to Text: Paste emojis, reveal the original text message.
+        </h1>
+    </div>
+    <main class=" min-h-screen  w-full bg-black flex flex-col justify-start items-center">
+        <h1 class="mt-[4vw] text-4xl font-semibold flex items-center">Text<span class="mx-7 flex items-center"><i id="arrow" class=" text-5xl font-thin ease-linear ri-arrow-right-line"></i></span>Emojis</h1>
+        <div id="endec-div " class="mt-6 flex items-center justify-between bg-[#222] gap-10 p-2 rounded-md">
+            <h3 id="enc-btn" class="flex items-center text-1xl sm:text-2xl font-medium rounded-md p-2 tracking-normal cursor-pointer"><span><i class="ri-lock-fill mr-1"></i></span>Encrypt Text</h3>
+
+            <h3 class="flex items-center text-1xl sm:text-2xl font-medium rounded-md p-2 tracking-normal cursor-pointer" id="dec-btn">
+                <span><i class="ri-lock-unlock-fill mr-1"></i></span>Decrypt Emojis</h3>
+        </div>
+        
+        <div id="encryption" class=" sm:w-[42%] flex-col flex justify-start p-4">
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">1. Type a Message</h5>
+            <div id="txtarea1">
+                <textarea class="min-w-[40vw] overflow-y-auto min-h-[5vw] resize-y  border-gray-800 p-4 rounded-md text-lg font-thin outline-none bg-[#1c1c1c] text-[#d0d0d0be]" placeholder="Hello World or write some javascript code."  id="txtmsg" ></textarea>
+            </div>
+            
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">2. Set a Password</h5>
+            <input type="password" class="bg-[#1c1c1c]  border-gray-800 p-3 rounded-md outline-none " placeholder="E.G. 1234" id="password">
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">3. Encrypt message</h5>
+            <button class="bg-[#454242c7] border-gray-700 py-2 rounded-lg  outline-none flex ite justify-center gap-2 text-lg  cursor-pointer transition-all duration-200 ease-in-out  " id="encrypt-btn"><span class="flex items-center"><i class="ri-lock-fill"></i></span>Encrypt Text</button>
+            <div id="resultants" class="relative mt-2 w-full  flex-col justify-center  hidden">
+                <h3 class="text-l font-thin text-zinc-500 mb-1 mt-2">Copy and send to your friend or impress your crush</h3>
+                <div id="result" class="min-h-10 bg-[#1c1c1c] border-gray-800 p-5 rounded-md outline-none relative mt-2">
+                </div>
+                <h6 class="text-sm text-gray-400 font-thin">double click to copy</h6>
+                <button id="share" class="mt-6 h-8 w-full self-center bg-[#25d366] rounded-md text-xl font-medium text-black cursor-pointer">Share the secret message</button>
+
+            </div>
+            <h4 class="mt-4 text-center text-lg font-medium  mb-2  text-gray-400">Crafted with <span class="text-[red]">❤</span> by <a href="#">Rishi yadav</a></h4>
+            
+        </div>
+
+        <div id="decryption"  class=" sm:w-[42%] flex-col  justify-start p-4 hidden">
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">1. Paste encrypted emojis</h5>
+            <div id="txtarea2">
+                <textarea class="min-w-[40vw] overflow-y-auto min-h-[5vw] resize-y  border-gray-800 p-4 rounded-md text-lg font-thin outline-none bg-[#1c1c1c] text-[#d0d0d0be]"  placeholder="Paste encrypted emojis here"  id="emojimsg" ></textarea>
+            </div>
+            
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">2. Type the password</h5>
+            <input  class="bg-[#1c1c1c]  border-gray-800 p-3 rounded-md outline-none " type="password" placeholder="jo tha vo hi likho" id="password1">
+            <h5 class="text-lg font-thin mt-2 mb-1 text-zinc-500">3. Decrypt Emojis</h5>
+            <button id="decrypt-btn" class="bg-[#454242c7] border-gray-700 py-2 rounded-lg  outline-none flex ite justify-center gap-2 text-lg  cursor-pointer transition-all duration-200 ease-in-out  "><span><i class="ri-lock-unlock-fill"></i></span>Decrypt Emojis</button>
+            <div id="resultant2" class="relative mt-2 w-full  flex-col justify-center  hidden">
+                <h3 class="text-l font-thin text-zinc-500 mb-1 mt-2">Copy and send to your friend or impress your crush</h3>
+                <textarea class="min-w-[40vw] overflow-y-auto min-h-[5vw] resize-y  border-gray-800 p-4 rounded-md text-lg font-thin outline-none bg-[#1c1c1c] text-[#d0d0d0be]"   id="result2" ></textarea>
+                <button id="share2"  class="mt-6 h-7 w-full self-center bg-[#25d366] rounded-md text-xl font-medium text-black cursor-pointer">Share the secret message</button>
+
+            </div>
+            <h4 class="mt-4 text-center text-lg font-medium  mb-2  text-gray-400">Crafted with <span class="text-[red]">❤</span> by <a href="#">Rishi yadav</a></h4>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+

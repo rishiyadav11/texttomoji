@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+#arrow{
+    transition: all 0.3s ease ;
+}
+
+
+#decryption #decrypt-btn:hover{
+    background: linear-gradient(to bottom, #1c1c1cda, #1C1C1f); 
+}
+
+#encryption #encrypt-btn:hover{
+    background: linear-gradient(to bottom, #1c1c1cda, #1C1C1f); 
+}
+
+
+
+#decryption #decrypt-btn span img{
+    height: 1.5vw;
+}
