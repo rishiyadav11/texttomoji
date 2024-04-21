@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 
-main{
-    background-image: url(https://img.freepik.com/premium-photo/texture-black-tile-background_167862-7842.jpg);
-    background-position: center;
-    background-size: cover;
-}
+
 
 #arrow{
     transition: all 0.3s ease ;

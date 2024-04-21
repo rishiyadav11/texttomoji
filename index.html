@@ -22,7 +22,18 @@
           2 Emoji to Text: Paste emojis, reveal the original text message.
         </h1>
     </div>
-    <main class=" min-h-screen  w-full bg-black flex flex-col justify-start items-center">
+    <svg id="texture" class="absolute -z-20 bg-[#111111]" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+      
+          <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+            <rect width="100" height="100" fill="url(#smallGrid)"/>
+            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="lightblue" stroke-width="0.1"/>
+          </pattern>
+        </defs>
+      
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    <main class=" min-h-screen  w-full flex flex-col justify-start items-center">
         <h1 class="mt-[4vw] text-4xl font-semibold flex items-center">Text<span class="mx-7 flex items-center"><i id="arrow" class=" text-5xl font-thin ease-linear ri-arrow-right-line"></i></span>Emojis</h1>
         <div id="endec-div " class="mt-6 flex items-center justify-between bg-[#222] gap-10 p-2 rounded-md">
             <h3 id="enc-btn" class="flex items-center text-1xl sm:text-2xl font-medium rounded-md p-2 tracking-normal cursor-pointer"><span><i class="ri-lock-fill mr-1"></i></span>Encrypt Text</h3>
